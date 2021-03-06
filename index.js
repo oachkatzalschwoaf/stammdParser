@@ -166,5 +166,7 @@ function parseFile() {
 }
 
 function downloadCsv(){
-	$('#jquery-table').table2CSV();
+	$('#jquery-table').table2CSV({
+		separator : ';',
+	});
 }
