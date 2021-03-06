@@ -1,0 +1,2 @@
+# stParser
+quick and dirty

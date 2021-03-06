@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stammdaten-reorganizer</title>
+	<meta name="author" content="Christian Winkler">
+	<link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+	
+	<div>
+		<label for="csvInput">csv-datei:</label>
+		<input type="file" id="csvInput" name="csvInput" accept=".csv" onchange="parseFile()">
+	</div>
+
+	<div>
+		<label for="mergeMail">Mail-felder zusammenführen wenn möglich:</label>
+		<input type="checkbox" id="mergeMail" name="mergeMail"  onchange="parseFile()">
+	</div>
+	
+	<div>
+		<label for="downloadCsv">Download Table as csv</label>
+		<input type="button" id="downloadCsv" name="downloadCsv" onclick="downloadCsv()" value="Download as CSV">
+	</div>
+
+
+	<div id='table-container'>
+		<table class="table" id="jquery-table"></table>
+	</div>
+
+	</div>
+
+	<footer class='footer'>
+	</footer>
+
+	<script type="text/javascript" src="lib/papaparse.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.tablesorter.widgets.min.js"></script>
+	<script type="text/javascript" src="lib/select2.min.js"></script>
+	<script type="text/javascript" src="lib/widget-filter-formatter-select2.min.js"></script>
+	<script type="text/javascript" src="lib/table2csv.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
