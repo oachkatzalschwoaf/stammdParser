@@ -24,7 +24,7 @@ function rebuildTable(tableData) {
 
 function addOrUpdateFilteredTable(row) {
 
-	if (row == undefined || row.id_personen == undefined){
+	if (row == undefined || row.id_personen == undefined) {
 		return;
 	}
 	// console.log("row: ", row);
@@ -87,7 +87,7 @@ function createTable(tableData, callback) {
 
 	var table = $('table#jquery-table');
 	//	return;
-	table.trigger("destroy", [false, function(){
+	table.trigger("destroy", [false, function () {
 	}]);
 
 	table.empty();
@@ -113,7 +113,7 @@ function createTable(tableData, callback) {
 	});
 
 	table.append(tbody);
-	
+
 	callback();
 }
 
@@ -123,7 +123,7 @@ function TableSort() {
 	$("#jquery-table").tablesorter({
 		theme: 'blue',
 		widthFixed: true,
-	widgets: ['zebra', 'stickyHeaders' /*, 'filter'*/],
+		widgets: ['zebra', 'stickyHeaders' /*, 'filter'*/],
 		showProcessing: true,
 		widgetOptions: {
 			filter_formatter: {
@@ -165,8 +165,8 @@ function parseFile() {
 	});
 }
 
-function downloadCsv(){
+function downloadCsv() {
 	$('#jquery-table').table2CSV({
-		separator : ';',
+		separator: ';',
 	});
 }

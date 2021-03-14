@@ -11,53 +11,63 @@
 </head>
 
 <p>
-Dies ist eine quick and dirty Implementierung für ein spezifisches Problem.
+	Dies ist eine quick and dirty Implementierung für ein spezifisches Problem.
 </p>
 </p>
-Howto: <br/>
-Einfach den entsprechenden export als csv im UTF-8 format speichern und mit dem button unten auswählen. <br/>
-Bei nicht UTF-8 formartierten dateien gehen die Umlaute verloren! <br/>
+Howto: <br />
+Einfach den entsprechenden export als csv im UTF-8 format speichern und mit dem Button unten auswählen. <br />
+Bei nicht UTF-8 formartierten dateien gehen die Umlaute verloren! <br />
 
-Die angepassten Daten werden anschließend in einer Tabelle angezeigt.<br/>
-
+Die angepassten Daten werden anschließend in einer Tabelle angezeigt.<br />
 </p>
 
 <body>
 	<div class="container-fluid">
-	
-	<div>
-		<label for="csvInput">csv-datei:</label>
-		<input type="file" id="csvInput" name="csvInput" accept=".csv" onchange="parseFile()">
+
+		<div>
+			<label for="csvInput">csv-datei:</label>
+			<input type="file" id="csvInput" name="csvInput" accept=".csv" onchange="parseFile()">
+		</div>
+
+		<div>
+			<label for="mergeMail">Mail/Tel-felder zusammenführen wenn möglich:</label>
+			<input type="checkbox" id="mergeMail" name="mergeMail" onchange="parseFile()">
+		</div>
+
+		<div>
+			<label for="downloadCsv">Download Table as csv</label>
+			<input type="button" id="downloadCsv" name="downloadCsv" onclick="downloadCsv()" value="Tabelle csv formartiert anzeigen">
+		</div>
+
+
+		<div id='table-container'>
+			<table class="table" id="jquery-table"></table>
+		</div>
+
 	</div>
 
-	<div>
-		<label for="mergeMail">Mail-felder zusammenführen wenn möglich:</label>
-		<input type="checkbox" id="mergeMail" name="mergeMail"  onchange="parseFile()">
-	</div>
-	
-	<div>
-		<label for="downloadCsv">Download Table as csv</label>
-		<input type="button" id="downloadCsv" name="downloadCsv" onclick="downloadCsv()" value="Download as CSV">
-	</div>
 
 
-	<div id='table-container'>
-		<table class="table" id="jquery-table"></table>
-	</div>
-
-	</div>
 
 	<footer class='footer'>
+		Quellcode siehe:
+		<a href="https://github.com/oachkatzalschwoaf/stammdParser">Github</a> <br>
+		eingesetzte Libraries: <br />
+		<list>
+			<li><a href="https://github.com/mholt/PapaParse/blob/master/LICENSE">PapaParse</a> </li>
+			<li><a href="https://github.com/jquery/jquery/blob/main/LICENSE.txt">JQuery</a> </li>
+			<li><a href="https://github.com/christianbach/tablesorter/blob/master/LICENSE">JQuery Tablesorter</a> </li>
+			<li><a href="https://github.com/rubo77/table2CSV/blob/master/LICENSE">table2CSV</a> </li>
+		</list>
 	</footer>
+
 
 	<script type="text/javascript" src="lib/papaparse.min.js"></script>
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/jquery.tablesorter.min.js"></script>
-	<script type="text/javascript" src="lib/jquery.tablesorter.widgets.min.js"></script>
-	<script type="text/javascript" src="lib/select2.min.js"></script>
-	<script type="text/javascript" src="lib/widget-filter-formatter-select2.min.js"></script>
 	<script type="text/javascript" src="lib/table2csv.js"></script>
 	<script type="text/javascript" src="index.js"></script>
+
 </body>
 
 </html>
